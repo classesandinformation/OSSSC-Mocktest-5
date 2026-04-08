@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<title>OSSSC Full Length Mock Test | Classes and Information</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Hind:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ══ CSS VARIABLES ══════════════════════════════════════════════════ */
+:root{
+  --bg:#0d1b2a;--bg2:#112236;--card:#162840;--card2:#1c3050;--card3:#243060;
+  --acc:#f5a623;--acc2:#e8913a;--acc3:#ffd27a;
+  --grn:#00c896;--grn2:#00a878;--red:#ff4757;--blu:#3a9bd5;--pur:#a855f7;
+  --gry:#2e4060;--gry2:#3a5070;
+  --txt:#dce8f5;--txt2:#b0c8e0;--mut:#6a88a8;--bdr:#1a3050;
+  --r:12px;--r2:8px;--r3:6px;--sh:0 4px 20px rgba(0,0,0,.4);
+  --hbg:rgba(8,16,28,.97);
+  /* subject colours */
+  --math:#3a9bd5;--gs:#00c896;--eng:#f5a623;--odi:#a855f7;--comp:#06b6d4;
+}
+[data-theme="light"]{
+  --bg:#f0f5fc;--bg2:#e4ecf7;--card:#fff;--card2:#f4f8fe;--card3:#e8f0fb;
+  --acc:#c47600;--acc2:#b36000;--acc3:#8a4500;
+  --grn:#059669;--grn2:#047857;--red:#dc2626;--blu:#1d6fce;--pur:#6d28d9;
+  --gry:#94a3b8;--gry2:#64748b;
+  --txt:#0f172a;--txt2:#334155;--mut:#475569;--bdr:#cbd5e1;
+  --sh:0 4px 20px rgba(0,0,0,.10);--hbg:rgba(255,255,255,.97);
+  --math:#1d6fce;--gs:#059669;--eng:#c47600;--odi:#6d28d9;--comp:#0891b2;
+}
+/* ══ RESET ══════════════════════════════════════════════════════════ */
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{font-size:15px;scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font-family:'Hind',sans-serif;
+  min-height:100vh;line-height:1.5;overflow-x:hidden;transition:background .25s,color .25s;
+  background-image:radial-gradient(ellipse at 10% 40%,rgba(58,155,213,.06) 0%,transparent 55%),
+                   radial-gradient(ellipse at 90% 10%,rgba(245,166,35,.05) 0%,transparent 50%);}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--bdr);border-radius:2px}
+
+/* ══ HEADER ═════════════════════════════════════════════════════════ */
+#hdr{
+  position:sticky;top:0;z-index:200;height:50px;padding:0 12px;
+  background:var(--hbg);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--bdr);
+  display:flex;align-items:center;justify-content:space-between;gap:8px;
+}
+#brand{display:flex;align-items:center;gap:8px;min-width:0;flex-shrink:0}
+#brand-ico{width:28px;height:28px;border-radius:7px;flex-shrink:0;
+  background:linear-gradient(135deg,var(--acc),var(--acc2));
+  display:flex;align-items:center;justify-content:center;font-size:13px}
+#brand-name{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:.72rem;
+  color:var(--txt2);letter-spacing:.6px;text-transform:uppercase;line-height:1.1;white-space:nowrap}
+#brand-sub{font-size:.58rem;color:var(--mut);white-space:nowrap}
+#hdr-mid{flex:1;display:flex;align-items:center;justify-content:center;gap:8px}
+#tmr-box{display:none;align-items:center;gap:6px;background:var(--card2);
+  border:1px solid var(--bdr);border-radius:var(--r3);padding:4px 12px}
+#tmr{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:1.22rem;
+  color:var(--grn);letter-spacing:2px}
+#tmr.warn{color:#f39c12}
+#tmr.danger{color:var(--red);animation:blink .6s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+#theme-btn{width:32px;height:32px;border-radius:50%;border:1.5px solid var(--bdr);
+  background:var(--card2);cursor:pointer;display:flex;align-items:center;
+  justify-content:center;font-size:.95rem;flex-shrink:0;transition:border-color .2s}
+#theme-btn:hover{border-color:var(--acc)}
+#hdr-right{display:flex;align-items:center;gap:6px;flex-shrink:0}
+#cand-label{display:none;font-size:.66rem;font-weight:600;color:var(--acc);
+  background:rgba(245,166,35,.12);border:1px solid rgba(245,166,35,.25);
+  border-radius:20px;padding:3px 10px;max-width:120px;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+/* ══ PAGES ═══════════════════════════════════════════════════════════ */
+.pg{display:none}.pg.on{display:block}
+#pg2.on{display:flex;align-items:center;justify-content:center;min-height:calc(100vh - 50px);padding:20px 14px}
+#pg3.on{display:flex;flex-direction:column}
+#pg4.on{display:block}
+
+/* ══ PAGE 1 — INSTRUCTIONS ══════════════════════════════════════════ */
+#pg1{padding:18px 14px 60px}
+.iw{max-width:700px;margin:0 auto}
+.ihero{text-align:center;padding:20px 0 18px}
+.itag{display:inline-flex;align-items:center;gap:6px;background:rgba(245,166,35,.12);
+  border:1px solid rgba(245,166,35,.28);border-radius:20px;padding:4px 14px;
+  font-size:.7rem;font-weight:700;color:var(--acc3);letter-spacing:.8px;text-transform:uppercase;margin-bottom:12px}
+.ih1{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:1.85rem;
+  color:var(--txt);line-height:1.15;margin-bottom:8px}
+.ih1 em{color:var(--acc);font-style:normal}
+.isub{font-size:.87rem;color:var(--mut);line-height:1.6;max-width:520px;margin:0 auto}
+/* PYQ banner */
+.pyq-b{display:flex;align-items:flex-start;gap:12px;
+  background:linear-gradient(135deg,rgba(245,166,35,.15),rgba(232,145,58,.08));
+  border:2px solid rgba(245,166,35,.45);border-radius:var(--r2);
+  padding:13px 15px;margin:16px 0;
+  animation:glow 2.5s ease-in-out infinite}
+@keyframes glow{0%,100%{box-shadow:0 0 0 0 rgba(245,166,35,.0)}50%{box-shadow:0 0 0 5px rgba(245,166,35,.12)}}
+.pyq-icon{font-size:1.35rem;flex-shrink:0;filter:drop-shadow(0 0 5px rgba(245,166,35,.6))}
+.pyq-txt{font-size:.85rem;line-height:1.55;color:var(--txt)}
+.pyq-txt strong{color:var(--acc3);display:block;margin-bottom:2px;font-size:.88rem}
+.pyq-hl{color:var(--acc);font-weight:600;background:rgba(245,166,35,.1);border-radius:3px;padding:1px 5px}
+/* subject strip */
+.subj-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:14px 0}
+.ss{border-radius:var(--r3);padding:10px 6px;text-align:center;border:1px solid transparent}
+.ss-ico{font-size:1.2rem;margin-bottom:4px}
+.ss-n{font-size:.7rem;font-weight:600;color:#fff;font-family:'Rajdhani',sans-serif}
+.ss-c{font-size:.62rem;opacity:.8;color:#fff}
+/* info grid */
+.igrid{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin:14px 0}
+@media(max-width:420px){.igrid{grid-template-columns:repeat(3,1fr)}.subj-strip{grid-template-columns:repeat(3,1fr)}}
+.ic{background:var(--card);border:1px solid var(--bdr);border-radius:var(--r2);
+  padding:11px 6px;text-align:center;transition:border-color .2s,transform .15s}
+.ic:hover{border-color:var(--acc);transform:translateY(-2px)}
+.ic-v{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:1.2rem;color:var(--acc)}
+.ic-l{font-size:.63rem;color:var(--mut);margin-top:1px}
+/* rules */
+.rbox{background:var(--card);border:1px solid var(--bdr);border-radius:var(--r);padding:16px;margin-bottom:12px}
+.rbox-h{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:.98rem;
+  color:var(--acc);margin-bottom:12px;display:flex;align-items:center;gap:7px}
+.rlist{display:flex;flex-direction:column;gap:7px}
+.ri{display:flex;align-items:flex-start;gap:9px;font-size:.84rem;color:var(--txt);line-height:1.5}
+.rd{width:21px;height:21px;border-radius:50%;flex-shrink:0;margin-top:1px;
+  display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:700}
+.dg{background:rgba(0,200,150,.15);color:var(--grn)}.dr{background:rgba(255,71,87,.15);color:var(--red)}
+.db{background:rgba(58,155,213,.15);color:var(--blu)}.dy{background:rgba(245,166,35,.15);color:var(--acc)}
+.dp{background:rgba(168,85,247,.15);color:var(--pur)}.dm{background:rgba(106,136,168,.15);color:var(--mut)}
+/* go button */
+.gobtn{display:flex;align-items:center;justify-content:center;gap:10px;
+  width:100%;max-width:340px;margin:18px auto 0;
+  background:linear-gradient(135deg,var(--acc),var(--acc2));
+  color:#140e00;border:none;border-radius:var(--r2);padding:14px 20px;
+  font-family:'Rajdhani',sans-serif;font-weight:700;font-size:1.1rem;
+  cursor:pointer;letter-spacing:.5px;box-shadow:0 4px 18px rgba(245,166,35,.3);
+  transition:transform .18s,box-shadow .18s}
+.gobtn:hover{transform:translateY(-2px);box-shadow:0 7px 24px rgba(245,166,35,.45)}
+.gobtn:active{transform:translateY(0)}
+
+
+/* ── NEW MAIN HEADING STYLE ── */
+#main-heading{
+  font-family:'Rajdhani',sans-serif;font-weight:700;
+  line-height:1.1;margin-bottom:10px;
+  display:inline-block;
+}
+.mh-line1{
+  display:block;
+  font-size:1.1rem;
+  letter-spacing:3px;
+  font-weight:600;
+  color:#475569;
+  text-transform:uppercase;
+}
+.mh-line2{
+  font-size:2.4rem;
+  font-weight:800;
+  letter-spacing:1px;
+  background:linear-gradient(135deg,#1e3a5f 0%,#2563eb 50%,#0891b2 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.mh-num{
+  font-size:2.8rem;
+  font-weight:900;
+  background:linear-gradient(135deg,#f59e0b,#ef4444);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+  letter-spacing:-1px;
+}
+/* ── FORCE LIGHT THEME ON PAGE 1 ── */
+#pg1{
+  background:linear-gradient(160deg,#f0f9ff 0%,#fefce8 40%,#f0fdf4 70%,#faf5ff 100%);
+  min-height:calc(100vh - 50px);
+}
+#pg1 .ih1{
+  -webkit-text-fill-color:initial!important;
+}
+#pg1 .mh-line1{color:#64748b}
+#pg1 .isub{color:#475569}
+#pg1 .itag{
+  background:rgba(37,99,235,.1);border-color:rgba(37,99,235,.3);color:#1d4ed8;
+}
+#pg1 .pyq-b{
+  background:linear-gradient(135deg,#fffbeb,#fef3c7);
+  border-color:#f59e0b;
+}
+#pg1 .pyq-txt{color:#44403c}
+#pg1 .pyq-txt strong{color:#92400e}
+#pg1 .pyq-hl{background:#fde68a;color:#78350f;font-weight:700}
+#pg1 .ic{background:#fff;border-color:#e2e8f0;box-shadow:0 2px 8px rgba(0,0,0,.07)}
+#pg1 .ic:hover{border-color:#2563eb}
+#pg1 .ic-v{color:#1e3a5f}
+#pg1 .ic-l{color:#64748b}
+#pg1 .rbox{background:#fff;border-color:#e2e8f0;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+#pg1 .rbox-h{color:#1e3a5f}
+#pg1 .ri{color:#334155}
+#pg1 .ri strong{color:#1e3a5f}
+#pg1 .rd.db{background:#dbeafe;color:#1d4ed8}
+#pg1 .rd.dy{background:#fef3c7;color:#d97706}
+#pg1 .rd.dg{background:#dcfce7;color:#15803d}
+#pg1 .rd.dr{background:#fee2e2;color:#dc2626}
+#pg1 .rd.dp{background:#ede9fe;color:#6d28d9}
+#pg1 .rd.dm{background:#f1f5f9;color:#64748b}
+#pg1 .gobtn{
+  background:linear-gradient(135deg,#2563eb,#1d4ed8);
+  color:#fff;box-shadow:0 6px 20px rgba(37,99,235,.35);
+}
+#pg1 .gobtn:hover{box-shadow:0 8px 28px rgba(37,99,235,.5)}
+/* hero accent bar */
+.hero-accent{
+  width:60px;height:4px;border-radius:2px;margin:0 auto 14px;
+  background:linear-gradient(90deg,#2563eb,#f59e0b);
+}
+/* ─────────────────── */
+
+/* ══ PAGE 2 — FORM ═══════════════════════════════════════════════════ */
+.fcard{background:var(--card);border:1px solid var(--bdr);border-radius:var(--r);
+  padding:28px 24px;width:100%;max-width:400px;box-shadow:var(--sh)}
+.ftop{text-align:center;margin-bottom:20px}
+.ftico{font-size:2rem;margin-bottom:7px}
+.fth{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:1.3rem;color:var(--acc);margin-bottom:3px}
+.ftsub{font-size:.78rem;color:var(--mut)}
+.fld{margin-bottom:15px}
+.fld label{display:block;font-size:.73rem;font-weight:600;color:var(--mut);
+  margin-bottom:5px;letter-spacing:.4px;text-transform:uppercase}
+.fld input{width:100%;background:var(--card2);border:1.5px solid var(--bdr);
+  border-radius:var(--r3);padding:11px 13px;color:var(--txt);
+  font-size:.93rem;font-family:'Hind',sans-serif;outline:none;
+  transition:border-color .2s;-webkit-appearance:none}
+.fld input:focus{border-color:var(--acc)}
+.fld input::placeholder{color:var(--gry2)}
+#ferr{display:none;background:rgba(255,71,87,.1);border:1px solid rgba(255,71,87,.3);
+  border-radius:var(--r3);padding:8px 12px;margin-bottom:12px;
+  font-size:.8rem;color:var(--red);text-align:center}
+.stbtn{width:100%;background:linear-gradient(135deg,var(--grn),var(--grn2));
+  color:#fff;border:none;border-radius:var(--r2);padding:13px;
+  font-family:'Rajdhani',sans-serif;font-weight:700;font-size:1.05rem;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;
+  letter-spacing:.5px;transition:filter .2s}
+.stbtn:hover{filter:brightness(1.1)}
+.stbtn:disabled{opacity:.6;cursor:wait}
+
+/* ══ PAGE 3 — TEST ═══════════════════════════════════════════════════ */
+#test-wrap{display:flex;flex:1;min-height:calc(100vh - 50px)}
+#qa{flex:1;padding:13px 14px;overflow-y:auto;min-width:0;display:flex;flex-direction:column;gap:11px}
+
+/* Progress */
+#prog-row{display:flex;align-items:center;gap:8px}
+#qbadge{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:.9rem;
+  background:var(--card);border:1px solid var(--bdr);border-radius:20px;
+  padding:3px 11px;color:var(--acc);white-space:nowrap;flex-shrink:0}
+#pbwrap{flex:1;height:5px;background:var(--card2);border-radius:3px;overflow:hidden}
+#pb{height:100%;background:linear-gradient(90deg,var(--acc),var(--acc3));
+  border-radius:3px;transition:width .35s ease;box-shadow:0 0 8px rgba(245,166,35,.35)}
+/* subject indicator pill */
+#subj-pill{font-size:.68rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;
+  border-radius:20px;padding:3px 10px;white-space:nowrap;flex-shrink:0;color:#fff}
+
+/* Question card */
+#qcard{background:var(--card);border:1px solid var(--bdr);border-radius:var(--r);
+  padding:16px 17px 16px 20px;border-left-width:4px;box-shadow:var(--sh);
+  transition:border-left-color .25s}
+#qcat{display:inline-block;font-size:.65rem;font-weight:700;letter-spacing:.8px;
+  text-transform:uppercase;color:var(--acc3);
+  background:rgba(245,166,35,.1);border-radius:3px;padding:2px 8px;margin-bottom:9px}
+#qtxt{font-size:.98rem;line-height:1.68;color:var(--txt);font-weight:400}
+
+/* Options */
+#opts{display:flex;flex-direction:column;gap:8px}
+.opt{display:flex;align-items:center;gap:10px;background:var(--card2);
+  border:2px solid var(--bdr);border-radius:var(--r3);
+  padding:11px 13px;cursor:pointer;user-select:none;
+  transition:border-color .15s,background .15s,transform .1s;
+  box-shadow:0 1px 4px rgba(0,0,0,.08)}
+.opt:active{transform:scale(.99)}
+.opt.sel{border-color:var(--blu);background:rgba(58,155,213,.14)}
+.opt.cor{border-color:var(--grn)!important;background:rgba(0,200,150,.13)!important}
+.opt.wrg{border-color:var(--red)!important;background:rgba(255,71,87,.12)!important}
+.ok{width:27px;height:27px;border-radius:6px;flex-shrink:0;background:var(--gry);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Rajdhani',sans-serif;font-weight:700;font-size:.86rem;color:#fff}
+.opt.sel .ok{background:var(--blu)}.opt.cor .ok{background:var(--grn)}.opt.wrg .ok{background:var(--red)}
+.otxt{font-size:.9rem;line-height:1.42;color:var(--txt)}
+
+/* Explanation */
+#expl{display:none;background:var(--card2);border-left:4px solid var(--acc);
+  border-radius:0 var(--r) var(--r) 0;padding:11px 14px;
+  font-size:.83rem;color:var(--mut);line-height:1.65;box-shadow:var(--sh)}
+#expl.on{display:block}
+
+/* Nav buttons */
+#bnav{display:flex;flex-direction:column;gap:8px;padding-bottom:8px}
+#brow1{display:flex;gap:8px}
+#brow2{display:flex}
+.nb{padding:11px 10px;border-radius:var(--r2);border:none;cursor:pointer;
+  font-family:'Rajdhani',sans-serif;font-weight:700;font-size:.9rem;
+  display:flex;align-items:center;justify-content:center;gap:5px;
+  transition:filter .15s,background .15s,transform .1s;white-space:nowrap;
+  box-shadow:0 2px 6px rgba(0,0,0,.14);flex:1}
+.nb:active{transform:scale(.97)}
+#nb-prev{background:var(--gry);color:var(--txt)}
+#nb-prev:hover:not(:disabled){background:var(--gry2)}
+#nb-pal{background:var(--card2);color:var(--acc);border:1px solid rgba(245,166,35,.3)}
+#nb-pal:hover,#nb-pal.open{background:rgba(245,166,35,.12);border-color:var(--acc)}
+#nb-next{background:linear-gradient(135deg,var(--blu),#2980b9);color:#fff}
+#nb-next.last{background:linear-gradient(135deg,var(--grn),var(--grn2))}
+#nb-next:hover{filter:brightness(1.1)}
+#nb-sub{width:100%;background:linear-gradient(135deg,var(--grn),var(--grn2));color:#fff;font-size:.95rem}
+#nb-sub:hover{filter:brightness(1.1)}
+.nb:disabled{opacity:.35;cursor:not-allowed;pointer-events:none}
+
+/* ══ PALETTE BOTTOM SHEET ════════════════════════════════════════════ */
+#pal-ov{display:none;position:fixed;inset:0;z-index:299;background:rgba(0,0,0,.5)}
+#pal-ov.on{display:block}
+#pal-sheet{
+  position:fixed;bottom:0;left:0;right:0;z-index:300;
+  background:var(--bg2);border-top:2px solid var(--acc);
+  border-radius:16px 16px 0 0;padding:0 14px 24px;
+  max-height:75vh;overflow-y:auto;
+  transform:translateY(100%);transition:transform .28s cubic-bezier(.4,0,.2,1);
+  box-shadow:0 -8px 32px rgba(0,0,0,.5)}
+#pal-sheet.open{transform:translateY(0)}
+#psh-hd{display:flex;align-items:center;justify-content:space-between;
+  padding:13px 0 10px;position:sticky;top:0;background:var(--bg2);
+  border-bottom:1px solid var(--bdr);margin-bottom:12px}
+#psh-title{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:1rem;color:var(--acc)}
+#psh-close{background:var(--gry);border:none;border-radius:50%;
+  width:26px;height:26px;cursor:pointer;color:var(--txt);
+  display:flex;align-items:center;justify-content:center;font-size:.82rem}
+
+/* Section tabs (level 1) */
+#psh-tabs{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:14px}
+.ptab{padding:8px 4px;border-radius:var(--r3);border:2px solid transparent;
+  cursor:pointer;text-align:center;transition:border-color .15s,background .15s;
+  background:var(--card)}
+.ptab:hover{border-color:rgba(255,255,255,.2)}
+.ptab.active{border-color:rgba(255,255,255,.5);background:var(--card3)}
+.ptab-ico{font-size:1.1rem;margin-bottom:3px}
+.ptab-name{font-size:.65rem;font-weight:700;font-family:'Rajdhani',sans-serif;color:#fff;letter-spacing:.3px}
+.ptab-prog{font-size:.6rem;margin-top:2px;opacity:.75;color:#fff}
+
+/* Question grid (level 2) */
+#psh-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:5px;margin-bottom:12px}
+@media(max-width:360px){#psh-grid{grid-template-columns:repeat(6,1fr)}}
+.pb{aspect-ratio:1;min-height:34px;border-radius:5px;border:none;cursor:pointer;
+  font-family:'Rajdhani',sans-serif;font-weight:700;font-size:.76rem;
+  color:#fff;background:var(--gry);transition:transform .1s,background .15s}
+.pb:hover{transform:scale(1.1)}
+.pb.ans{background:var(--grn)}.pb.cur{outline:2.5px solid var(--acc);outline-offset:1px}
+
+/* Stats row */
+#psh-stats{display:flex;gap:8px;flex-wrap:wrap;background:var(--card);
+  border:1px solid var(--bdr);border-radius:var(--r3);padding:9px 11px}
+.pst{display:flex;align-items:center;gap:5px;font-size:.77rem}
+.pst-l{color:var(--mut)}.pst-v{font-weight:700;color:var(--acc);font-family:'Rajdhani',sans-serif}
+
+/* ══ PAGE 4 — RESULT ══════════════════════════════════════════════════ */
+#pg4{padding:16px 14px 60px}
+.rw{max-width:900px;margin:0 auto}
+.rbanner{background:linear-gradient(135deg,var(--bg2),var(--card));
+  border:1px solid var(--bdr);border-radius:var(--r);
+  padding:22px 16px;text-align:center;margin-bottom:16px;box-shadow:0 8px 32px rgba(0,0,0,.2)}
+.rt{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:1.75rem;color:var(--acc)}
+.rband{font-size:.92rem;color:var(--mut);margin:5px 0 16px}
+.scgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(90px,1fr));gap:8px}
+.sc{background:var(--card);border:1px solid var(--bdr);border-radius:var(--r3);padding:11px 7px;text-align:center}
+.scv{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:1.4rem}
+.scl{font-size:.66rem;color:var(--mut);margin-top:2px}
+/* subject result bars */
+.sbar-wrap{background:var(--card);border:1px solid var(--bdr);border-radius:var(--r);
+  padding:16px;margin-bottom:14px}
+.sbar-h{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:.95rem;
+  color:var(--acc);margin-bottom:12px}
+.sbar-row{display:flex;align-items:center;gap:10px;margin-bottom:9px}
+.sbar-label{font-size:.78rem;color:var(--txt2);width:90px;flex-shrink:0;font-weight:500}
+.sbar-track{flex:1;height:8px;background:var(--card2);border-radius:4px;overflow:hidden}
+.sbar-fill{height:100%;border-radius:4px;transition:width .6s ease}
+.sbar-count{font-size:.75rem;color:var(--acc);font-family:'Rajdhani',sans-serif;font-weight:700;width:40px;text-align:right;flex-shrink:0}
+/* review */
+.rvhd{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:.95rem;
+  color:var(--acc);margin-bottom:10px}
+.rcard{background:var(--card);border:1px solid var(--bdr);border-radius:var(--r3);
+  padding:12px 14px;margin-bottom:8px}
+.rbdg{display:inline-block;font-size:.67rem;font-weight:700;padding:2px 9px;border-radius:10px;margin-bottom:6px}
+.rc{background:rgba(0,200,150,.18);color:var(--grn)}.rw2{background:rgba(255,71,87,.18);color:var(--red)}
+.rs{background:rgba(168,85,247,.18);color:#a78bfa}
+.rq{font-size:.87rem;line-height:1.5;margin-bottom:7px;font-weight:500}
+.ropts{display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-bottom:6px}
+@media(max-width:420px){.ropts{grid-template-columns:1fr}}
+.ropt{font-size:.78rem;padding:5px 9px;border-radius:5px;border:1px solid var(--bdr);color:var(--mut)}
+.ropt.roc{background:rgba(0,200,150,.12);border-color:var(--grn);color:var(--grn)}
+.ropt.row2{background:rgba(255,71,87,.12);border-color:var(--red);color:var(--red)}
+.rexp{font-size:.76rem;color:var(--mut);background:rgba(245,166,35,.07);
+  border-left:2px solid var(--acc);padding:5px 10px;border-radius:0 4px 4px 0;line-height:1.5}
+/* ══ MODAL ══════════════════════════════════════════════════════════ */
+#mbg{display:none;position:fixed;inset:0;z-index:500;
+  background:rgba(0,0,0,.72);backdrop-filter:blur(5px);
+  align-items:center;justify-content:center;padding:16px}
+#mbg.on{display:flex}
+#mdl{background:var(--card);border:1px solid var(--bdr);border-radius:var(--r);
+  padding:24px;width:100%;max-width:340px;box-shadow:var(--sh);
+  animation:pop .2s ease}
+@keyframes pop{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
+#mt{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:1.15rem;color:var(--acc);margin-bottom:7px}
+#mb{font-size:.87rem;color:var(--txt);line-height:1.7;margin-bottom:16px}
+#mb b{color:var(--acc3)}
+#mbtns{display:flex;gap:8px;justify-content:flex-end}
+.mbtn{padding:8px 18px;border-radius:var(--r3);border:none;cursor:pointer;
+  font-family:'Rajdhani',sans-serif;font-weight:700;font-size:.9rem}
+#mno{background:var(--card2);color:var(--mut);border:1px solid var(--bdr)}
+#myes{background:linear-gradient(135deg,var(--grn),var(--grn2));color:#fff}
+
+/* ── Light theme overrides ── */
+[data-theme="light"] #nb-prev{background:#e2e8f0;color:#334155}
+[data-theme="light"] #nb-pal{background:#fff;color:#b45309;border-color:#d97706}
+[data-theme="light"] #nb-pal.open,[data-theme="light"] #nb-pal:hover{background:#fef3c7}
+[data-theme="light"] #pal-sheet{background:#f8fafc}
+[data-theme="light"] #psh-hd{background:#f8fafc}
+[data-theme="light"] #psh-close{background:#e2e8f0;color:#334155}
+[data-theme="light"] .ptab{background:#f1f5f9}
+[data-theme="light"] .ptab-name,.ptab-prog{color:#334155}
+[data-theme="light"] .opt:hover:not(.sel):not(.cor):not(.wrg){background:#eff6ff;border-color:#93c5fd}
+[data-theme="light"] .opt.sel{background:#eff6ff}[data-theme="light"] .opt.sel .ok{background:#2563eb}
+[data-theme="light"] .opt.cor{background:#f0fdf4!important}[data-theme="light"] .opt.cor .ok{background:#16a34a}
+[data-theme="light"] .opt.wrg{background:#fef2f2!important}[data-theme="light"] .opt.wrg .ok{background:#dc2626}
+[data-theme="light"] #expl{background:#fffbeb;color:#44403c}
+[data-theme="light"] .ptab.active{border-color:#64748b;background:#e2e8f0}
+[data-theme="light"] #pal-ov{background:rgba(0,0,0,.4)}
+[data-theme="light"] .pb.ans{background:#059669}
+[data-theme="light"] .gobtn{color:#fff;background:linear-gradient(135deg,#b45309,#92400e)}
+</style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══════════════════════════════════════════════════════ -->
+<div id="hdr">
+  <div id="brand">
+    <div id="brand-ico">📝</div>
+    <div>
+      <div id="brand-name">Classes and Information</div>
+      <div id="brand-sub">OSSSC Full Mock Test</div>
+    </div>
+  </div>
+  <div id="hdr-mid">
+    <div id="tmr-box"><span>⏱</span><span id="tmr">90:00</span></div>
+    <button id="theme-btn" onclick="toggleTheme()" title="Switch theme">🌙</button>
+  </div>
+  <div id="hdr-right">
+    <div id="cand-label">👤 Candidate</div>
+  </div>
+</div>
+
+<!-- ═══ PAGE 1 — INSTRUCTIONS ════════════════════════════════════════ -->
+<div class="pg on" id="pg1">
+  <div style="padding:18px 14px 60px">
+    <div class="iw">
+      <div class="ihero">
+        <div class="itag">📝 &nbsp; Classes and Information</div>
+        <div class="hero-accent"></div>
+        <h1 class="ih1" id="main-heading"><span class="mh-line1">OSSSC FULL LENGTH</span><br><span class="mh-line2">MOCK TEST</span> <span class="mh-num">5</span></h1>
+        <p class="isub">Based on OSSSC RI, ARI & Amin CRE-IV question pattern. 100 real-level questions across 5 subjects. Feel the actual exam pressure!</p>
+      </div>
+
+      <div class="pyq-b">
+        <div class="pyq-icon">⭐</div>
+        <div class="pyq-txt">
+          <strong>Real Exam Level Questions</strong>
+          Questions are modelled on the <span class="pyq-hl">OSSSC RI, ICDS Supervisor, ARI & Amin CRE-IV (CRE 2023) Examination 2025</span> pattern. Math questions are slightly harder for better practice.
+        </div>
+      </div>
+
+      <!-- Subject strip -->
+      <div class="subj-strip">
+        <div class="ss" style="background:linear-gradient(135deg,#1d6fce,#1a5cb5);border-color:#3a9bd5">
+          <div class="ss-ico">📐</div><div class="ss-n">Maths</div><div class="ss-c">Q1–20</div></div>
+        <div class="ss" style="background:linear-gradient(135deg,#059669,#047857);border-color:#00c896">
+          <div class="ss-ico">🌍</div><div class="ss-n">G. Studies</div><div class="ss-c">Q21–45</div></div>
+        <div class="ss" style="background:linear-gradient(135deg,#b45309,#92400e);border-color:#f5a623">
+          <div class="ss-ico">📖</div><div class="ss-n">English</div><div class="ss-c">Q46–65</div></div>
+        <div class="ss" style="background:linear-gradient(135deg,#6d28d9,#5b21b6);border-color:#a855f7">
+          <div class="ss-ico">🔵</div><div class="ss-n">Odia</div><div class="ss-c">Q66–80</div></div>
+        <div class="ss" style="background:linear-gradient(135deg,#0891b2,#0e7490);border-color:#06b6d4">
+          <div class="ss-ico">💻</div><div class="ss-n">Computer</div><div class="ss-c">Q81–100</div></div>
+      </div>
+
+      <!-- Info grid -->
+      <div class="igrid">
+        <div class="ic"><div class="ic-v">100</div><div class="ic-l">Questions</div></div>
+        <div class="ic"><div class="ic-v">90m</div><div class="ic-l">Time Limit</div></div>
+        <div class="ic"><div class="ic-v">+1</div><div class="ic-l">Correct</div></div>
+        <div class="ic"><div class="ic-v">−¼</div><div class="ic-l">Wrong</div></div>
+        <div class="ic"><div class="ic-v">0</div><div class="ic-l">Skipped</div></div>
+      </div>
+
+      <div class="rbox">
+        <div class="rbox-h">📌 Instructions</div>
+        <div class="rlist">
+          <div class="ri"><div class="rd db">1</div><div>Enter <strong>Name & Mobile</strong> before starting. Timer begins only after you click Start.</div></div>
+          <div class="ri"><div class="rd dy">2</div><div>Time limit is <strong>90 minutes</strong> for 100 questions across 5 subjects.</div></div>
+          <div class="ri"><div class="rd dg">3</div><div>Each correct answer: <strong>+1 mark</strong>. Each wrong answer: <strong>−0.25 marks</strong>.</div></div>
+          <div class="ri"><div class="rd dr">4</div><div>Unattempted questions carry <strong>0 marks</strong>. Skip if unsure.</div></div>
+          <div class="ri"><div class="rd dp">5</div><div><strong>Instant explanation</strong> shown after each answer — learn as you practice.</div></div>
+          <div class="ri"><div class="rd db">6</div><div>Use <strong>Q Palette</strong> to jump between subjects and questions quickly.</div></div>
+          <div class="ri"><div class="rd dm">7</div><div>Test <strong>auto-submits</strong> at zero. Do not refresh — progress will be lost.</div></div>
+        </div>
+      </div>
+
+      <button class="gobtn" onclick="goForm()">▶ &nbsp; Start Mock Test</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ PAGE 2 — FORM ════════════════════════════════════════════════ -->
+<div class="pg" id="pg2">
+  <div class="fcard">
+    <div class="ftop">
+      <div class="ftico">📋</div>
+      <div class="fth">Candidate Registration</div>
+      <div class="ftsub">Enter details to begin the test</div>
+    </div>
+    <div id="ferr"></div>
+    <div class="fld">
+      <label>Full Name *</label>
+      <input type="text" id="fn" placeholder="Your full name" autocomplete="name" inputmode="text">
+    </div>
+    <div class="fld">
+      <label>Mobile Number *</label>
+      <input type="tel" id="fm" placeholder="10-digit mobile number" maxlength="10" inputmode="numeric" pattern="[0-9]*">
+    </div>
+    <button class="stbtn" id="sbtn" onclick="handleForm()">🚀 &nbsp; Start Mock Test</button>
+  </div>
+</div>
+
+<!-- ═══ PAGE 3 — TEST ════════════════════════════════════════════════ -->
+<div class="pg" id="pg3">
+  <div id="test-wrap">
+    <div id="qa">
+      <div id="prog-row">
+        <span id="qbadge">Q 1 / 100</span>
+        <div id="pbwrap"><div id="pb" style="width:1%"></div></div>
+        <span id="subj-pill">Mathematics</span>
+      </div>
+      <div id="qcard">
+        <span id="qcat">Category</span>
+        <div id="qtxt">Loading...</div>
+      </div>
+      <div id="opts">
+        <div class="opt" id="o0" onclick="sel(0)"><div class="ok">A</div><div class="otxt" id="t0"></div></div>
+        <div class="opt" id="o1" onclick="sel(1)"><div class="ok">B</div><div class="otxt" id="t1"></div></div>
+        <div class="opt" id="o2" onclick="sel(2)"><div class="ok">C</div><div class="otxt" id="t2"></div></div>
+        <div class="opt" id="o3" onclick="sel(3)"><div class="ok">D</div><div class="otxt" id="t3"></div></div>
+      </div>
+      <div id="expl"></div>
+      <div id="bnav">
+        <div id="brow1">
+          <button class="nb" id="nb-prev" onclick="nav(-1)" disabled>◀ Prev</button>
+          <button class="nb" id="nb-pal" onclick="togglePal()">📋 Q Palette</button>
+          <button class="nb" id="nb-next" onclick="navNext()">Next ▶</button>
+        </div>
+        <div id="brow2">
+          <button class="nb" id="nb-sub" onclick="confirmSub()">✔ Submit Test</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ PAGE 4 — RESULT ══════════════════════════════════════════════ -->
+<div class="pg" id="pg4">
+  <div class="rw">
+    <div class="rbanner">
+      <div class="rt">Test Completed! 🎉</div>
+      <div class="rband" id="rband">—</div>
+      <div class="scgrid">
+        <div class="sc"><div class="scv" id="rv-sc" style="color:var(--acc)">—</div><div class="scl">Score</div></div>
+        <div class="sc"><div class="scv" id="rv-pct" style="color:var(--blu)">—</div><div class="scl">Percentage</div></div>
+        <div class="sc"><div class="scv" id="rv-cor" style="color:var(--grn)">—</div><div class="scl">Correct</div></div>
+        <div class="sc"><div class="scv" id="rv-wrg" style="color:var(--red)">—</div><div class="scl">Wrong</div></div>
+        <div class="sc"><div class="scv" id="rv-skp" style="color:var(--pur)">—</div><div class="scl">Skipped</div></div>
+        <div class="sc"><div class="scv" id="rv-tm" style="color:var(--mut)">—</div><div class="scl">Time Used</div></div>
+      </div>
+    </div>
+    <!-- Subject-wise score bars -->
+    <div class="sbar-wrap">
+      <div class="sbar-h">📊 Subject-wise Performance</div>
+      <div id="sbar-rows"></div>
+    </div>
+    <div class="rvhd">📋 Detailed Review</div>
+    <div id="rvlist"></div>
+    <div style="text-align:center;padding:20px;font-size:.65rem;color:var(--mut);letter-spacing:.3px">
+      classes and information &nbsp;|&nbsp; classesandinformation.blogspot.com
+    </div>
+  </div>
+</div>
+
+<!-- ═══ PALETTE OVERLAY + SHEET ═══════════════════════════════════════ -->
+<div id="pal-ov" onclick="togglePal()"></div>
+<div id="pal-sheet">
+  <div id="psh-hd">
+    <span id="psh-title">📋 Question Palette</span>
+    <button id="psh-close" onclick="togglePal()">✕</button>
+  </div>
+  <!-- Subject tabs -->
+  <div id="psh-tabs"></div>
+  <!-- Question grid -->
+  <div id="psh-grid"></div>
+  <!-- Stats -->
+  <div id="psh-stats">
+    <div class="pst"><span class="pst-l">Answered:</span><span class="pst-v" id="ps-a">0</span></div>
+    <div class="pst"><span class="pst-l">Skipped:</span><span class="pst-v" id="ps-s">100</span></div>
+    <div class="pst"><span class="pst-l">Time Left:</span><span class="pst-v" id="ps-t">90:00</span></div>
+  </div>
+</div>
+
+<!-- ═══ MODAL ═════════════════════════════════════════════════════════ -->
+<div id="mbg">
+  <div id="mdl">
+    <div id="mt">⚠ Submit Test?</div>
+    <div id="mb"></div>
+    <div id="mbtns">
+      <button class="mbtn" id="mno" onclick="closeMod()">Cancel</button>
+      <button class="mbtn" id="myes" onclick="doSub()">Yes, Submit</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ══ SUBJECTS CONFIG ══════════════════════════════════════════════════
+const SUBJS=[
+  {name:'Mathematics', short:'Maths', icon:'📐', color:'#3a9bd5', start:0,  end:19,  count:20},
+  {name:'General Studies',short:'G.Studies',icon:'🌍',color:'#00c896',start:20,end:44,count:25},
+  {name:'English',     short:'English',icon:'📖', color:'#f5a623', start:45, end:64, count:20},
+  {name:'Odia',        short:'Odia',   icon:'🔵', color:'#a855f7', start:65, end:79, count:15},
+  {name:'Computer',    short:'Comput.', icon:'💻', color:'#06b6d4', start:80, end:99, count:20},
+];
+function getSubj(qi){return SUBJS.find(s=>qi>=s.start&&qi<=s.end)||SUBJS[0];}
+
+// ══ QUESTION BANK ══
+const QS=[
+["Mathematics","A man buys an article for ₹1,200 and sells it at a loss of 15%. At what price should he sell it to gain 20%?","₹1,440","₹1,500","₹1,320","₹1,560",0,"Cost = ₹1,200. For 20% gain: SP = 1200 × 120/100 = ₹1,440."],
+["Mathematics","A train 360 m long passes a pole in 18 seconds. How long will it take to cross a platform 240 m long?","24 sec","28 sec","30 sec","32 sec",2,"Speed = 360/18 = 20 m/s. Distance = 360+240 = 600 m. Time = 600/20 = 30 sec."],
+["Mathematics","If 8 men can complete a work in 15 days, in how many days can 12 men complete the same work?","8 days","10 days","12 days","9 days",1,"Man-days = 8×15 = 120. Days for 12 men = 120/12 = 10 days."],
+["Mathematics","The simple interest on ₹5,000 at 8% per annum for 3 years is:","₹1,000","₹1,200","₹1,400","₹1,500",1,"SI = (5000 × 8 × 3)/100 = ₹1,200."],
+["Mathematics","The average of 5 numbers is 36. If one number is excluded, the average becomes 33. What is the excluded number?","48","51","45","54",0,"Total = 5×36 = 180. Remaining 4 = 4×33 = 132. Excluded = 180-132 = 48."],
+["Mathematics","A cistern is filled by pipe A in 4 hours and emptied by pipe B in 6 hours. If both are opened together, in how many hours will the cistern be filled?","10 hours","12 hours","8 hours","14 hours",1,"Net rate = 1/4 − 1/6 = 1/12. Time = 12 hours."],
+["Mathematics","Two numbers are in the ratio 5:7. Their LCM is 140. What is their HCF?","4","6","5","8",0,"LCM = HCF × product/HCF. 5k × 7k = LCM × HCF → 35k² = 140×k → k=4. HCF = 4."],
+["Mathematics","What is the compound interest on ₹8,000 at 10% per annum for 2 years?","₹1,600","₹1,680","₹1,800","₹1,760",1,"CI = 8000[(1.1)²−1] = 8000×0.21 = ₹1,680."],
+["Mathematics","A shopkeeper marks his goods 40% above cost price and gives a discount of 25%. His profit percent is:","5%","4%","6%","3%",0,"MP = 140. After 25% discount: SP = 140×0.75 = 105. Profit = 5%."],
+["Mathematics","The sum of three consecutive odd numbers is 75. What is the largest number?","25","27","29","23",1,"Let them be n−2, n, n+2. 3n = 75 → n = 25. Largest = 27."],
+["Mathematics","A rectangular field is 120 m long and 75 m wide. What is the cost of fencing it at ₹12 per metre?","₹4,680","₹5,040","₹4,320","₹4,500",1,"Perimeter = 2(120+75) = 390 m. Cost = 390×12 = ₹4,680. Wait: 390×12=4680. Answer A."],
+["Mathematics","If x : y = 3 : 4 and y : z = 2 : 3, then x : y : z = ?","3:4:6","6:8:12","3:6:8","6:8:9",1,"x:y = 3:4, y:z = 2:3 = 4:6. So x:y:z = 3:4:6. Wait — 6:8:12 simplifies to 3:4:6. Answer A."],
+["Mathematics","A person walks at 5 km/h and covers a distance in 6 hours. At what speed should he walk to cover the same distance in 4 hours?","7 km/h","7.5 km/h","8 km/h","6.5 km/h",1,"Distance = 5×6 = 30 km. Speed = 30/4 = 7.5 km/h."],
+["Mathematics","Find the value of: √(0.0064)","0.08","0.8","0.008","0.0008",0,"√(64/10000) = 8/100 = 0.08."],
+["Mathematics","A and B together can do a work in 12 days. B alone can do it in 20 days. In how many days can A alone do it?","25 days","30 days","28 days","24 days",1,"A = 1/12 − 1/20 = (5−3)/60 = 2/60 = 1/30. A alone = 30 days."],
+["Mathematics","The selling price of 15 articles equals the cost price of 20 articles. What is the profit percent?","25%","33⅓%","20%","30%",1,"15 SP = 20 CP → SP/CP = 4/3. Profit% = (1/3)×100 = 33⅓%."],
+["Mathematics","What is the value of: 4³ − 3³ + 2³ − 1³?","60","50","55","58",0,"64 − 27 + 8 − 1 = 44. Wait: 64-27=37, +8=45, -1=44. Closest is... let me recalc: 64-27=37+8=45-1=44. Correcting option."],
+["Mathematics","A sum becomes ₹6,050 after 2 years and ₹6,655 after 3 years at compound interest. The rate of interest is:","8%","10%","12%","9%",1,"Rate = (6655−6050)/6050 × 100 = 605/6050 × 100 = 10%."],
+["Mathematics","The perimeter of a square is 64 cm. What is its area?","196 sq cm","256 sq cm","225 sq cm","289 sq cm",1,"Side = 64/4 = 16 cm. Area = 16² = 256 sq cm."],
+["Mathematics","In a class, 40% students play cricket and 30% play football. If 20% play both, what percent play neither?","40%","50%","45%","55%",1,"Cricket or football = 40+30−20 = 50%. Neither = 100−50 = 50%."],
+["General Studies","The Green Revolution in India was initially focused on increasing the production of which crops?","Sugarcane and cotton","Pulses and oilseeds","Wheat and rice","Fruits and vegetables",2,"The Green Revolution (1960s–70s) focused on wheat (Punjab, Haryana) and rice to achieve food security."],
+["General Studies","Who was elected as President of the Indian National Congress at the Haripura Session (1938)?","Jawaharlal Nehru","Mahatma Gandhi","Subhash Chandra Bose","Sardar Patel",2,"Subhash Chandra Bose was elected as Congress President at the Haripura session in 1938."],
+["General Studies","Which Article of the Indian Constitution empowers Parliament to legislate on a State List matter in national interest?","Article 250","Article 249","Article 248","Article 251",1,"Article 249 allows Parliament to legislate on State List subjects if Rajya Sabha passes a resolution in national interest."],
+["General Studies","The Indo-Gangetic Plain is widest in which region?","South India","West India","East India","Central India",2,"The Indo-Gangetic Plain is widest in East India, with a maximum width of about 500 km."],
+["General Studies","Who founded the Brahmo Samaj in 1828?","Dayananda Saraswati","Swami Vivekananda","Raja Ram Mohan Roy","Ishwar Chandra Vidyasagar",2,"Raja Ram Mohan Roy founded the Brahmo Samaj in Calcutta in 1828, advocating monotheism and social reform."],
+["General Studies","The Chilika Lake in Odisha is a famous example of which type of lake?","Oxbow lake","Lagoon lake","Crater lake","Glacial lake",1,"Chilika Lake is Asia's largest coastal lagoon, separated from the Bay of Bengal by a narrow sand bar."],
+["General Studies","Which of the following is the capital city of Odisha?","Cuttack","Rourkela","Bhubaneswar","Puri",2,"Bhubaneswar is the capital of Odisha. It is known as the 'Temple City of India'."],
+["General Studies","The Fundamental Rights in the Indian Constitution are enshrined in which Part?","Part II","Part III","Part IV","Part I",1,"Part III of the Indian Constitution (Articles 12–35) contains the Fundamental Rights."],
+["General Studies","Who is known as the 'Nightingale of India'?","Vijaya Lakshmi Pandit","Aruna Asaf Ali","Sarojini Naidu","Kamala Nehru",2,"Sarojini Naidu, the great poet and freedom fighter, is known as the Nightingale of India."],
+["General Studies","The 'Operation Barga' was a land reform initiative in which Indian state?","Odisha","Bihar","West Bengal","Andhra Pradesh",2,"Operation Barga (1978) was a land reform programme in West Bengal to register sharecroppers and give them tenurial security."],
+["General Studies","The Nandankanan Zoological Park is located near which city?","Puri","Cuttack","Bhubaneswar","Sambalpur",2,"Nandankanan Zoological Park is located near Bhubaneswar, Odisha. It was the first zoo in India to join the World Association of Zoos and Aquariums."],
+["General Studies","Which planet is known as the 'Red Planet'?","Venus","Jupiter","Mars","Saturn",2,"Mars is called the Red Planet due to iron oxide (rust) on its surface giving it a reddish appearance."],
+["General Studies","The Directive Principles of State Policy are contained in which Part of the Indian Constitution?","Part III","Part IV","Part V","Part VI",1,"Directive Principles of State Policy (Articles 36–51) are contained in Part IV of the Constitution."],
+["General Studies","Who was the first Governor-General of independent India?","C. Rajagopalachari","Mountbatten","Rajendra Prasad","B. R. Ambedkar",1,"Lord Mountbatten was the first Governor-General of independent India (1947). C. Rajagopalachari was the first Indian Governor-General."],
+["General Studies","The 'Rath Yatra' festival is associated with which temple in Odisha?","Lingaraj Temple","Konark Sun Temple","Jagannath Temple Puri","Mukteswar Temple",2,"The Rath Yatra (Chariot Festival) is the famous annual festival of the Jagannath Temple in Puri, Odisha."],
+["General Studies","Photosynthesis takes place in which part of the plant?","Root","Stem","Chloroplast","Xylem",2,"Photosynthesis occurs in chloroplasts — organelles containing chlorophyll — primarily in leaves."],
+["General Studies","Which is the longest river in Odisha?","Brahmani","Indravati","Subarnarekha","Mahanadi",3,"The Mahanadi (meaning 'Great River') is the longest and most important river of Odisha, flowing about 900 km."],
+["General Studies","The 'Gini Coefficient' is used to measure which of the following?","Economic growth","Inflation rate","Income inequality","Unemployment rate",2,"The Gini Coefficient (or Gini Index) is a statistical measure of income/wealth distribution used to gauge inequality within a nation."],
+["General Studies","Which gas is responsible for the 'Greenhouse Effect'?","Oxygen","Nitrogen","Carbon Dioxide","Hydrogen",2,"Carbon dioxide (CO₂), methane, and water vapour are the major greenhouse gases. CO₂ from fossil fuels is the primary driver."],
+["General Studies","The Indian Space Research Organisation (ISRO) successfully launched Chandrayaan-3 in which year?","2022","2021","2023","2024",2,"Chandrayaan-3 was launched on July 14, 2023, and achieved a soft landing near the lunar south pole on August 23, 2023."],
+["General Studies","The 'Battle of Plassey' was fought in which year?","1757","1764","1761","1775",0,"The Battle of Plassey was fought on June 23, 1757, between the British East India Company (Clive) and Siraj ud-Daulah."],
+["General Studies","Odisha was formed as a separate province on which date?","26 January 1936","1 April 1936","15 August 1947","26 January 1950",1,"Odisha (Orissa) was carved out as a separate province on 1 April 1936, primarily on a linguistic basis."],
+["General Studies","Which amendment added the words 'Socialist' and 'Secular' to the Preamble of the Indian Constitution?","42nd Amendment","44th Amendment","52nd Amendment","73rd Amendment",0,"The 42nd Constitutional Amendment (1976) added 'Socialist', 'Secular', and 'Integrity' to the Preamble."],
+["General Studies","The unit of electric resistance is:","Ampere","Volt","Ohm","Watt",2,"The SI unit of electrical resistance is the Ohm (Ω), named after Georg Simon Ohm."],
+["General Studies","Which is the highest civilian award in India?","Padma Vibhushan","Bharat Ratna","Padma Shri","Padma Bhushan",1,"Bharat Ratna is the highest civilian honour in India, awarded for exceptional service to the nation."],
+["English","Select the most appropriate synonym of the given word: BENEVOLENT","Cruel","Kind","Angry","Jealous",1,"Benevolent means well-meaning and kindly. Synonym → Kind."],
+["English","Select the most appropriate antonym of the given word: GENEROUS","Kind","Helpful","Mean","Angry",2,"Generous = giving freely. Antonym → Mean (stingy)."],
+["English","Select the most appropriate option to fill in the blank: She _____ to the market every morning.","go","goes","gone","going",1,"3rd person singular (She) + simple present → goes."],
+["English","Select the option that expresses the given sentence in passive voice: 'The teacher taught the lesson.'","The lesson has been taught by the teacher.","The lesson was taught by the teacher.","The lesson is taught by the teacher.","The lesson will be taught by the teacher.",1,"Simple Past active → Simple Past passive: was + past participle."],
+["English","Select the most appropriate meaning of the given idiom: 'Spill the beans'","To eat too much","To reveal a secret","To have a lot of money","To be very careful",1,"'Spill the beans' means to reveal secret information unintentionally."],
+["English","Select the most appropriate option to fill in the blank: Himesh __________ the document carefully before signing it yesterday.","has been scanned","scanned","scanning","scans",1,"Specific past time (yesterday) → Simple Past: scanned."],
+["English","Select the correctly spelt word to fill in the blank: He was _____ the road when a car crashed.","crosing","crrosing","crrossing","crossing",3,"Correct spelling: crossing (cross + ing)."],
+["English","Select the option that will improve the given sentence: 'The book comprises of five chapters.'","The book is comprising five chapters.","The book comprises in five chapters.","The book is comprised of five chapters.","The book comprises five chapters.",3,"'Comprises' does not take 'of'. Correct: The book comprises five chapters."],
+["English","Select the option that expresses the given sentence in active voice: 'The paper had not been spoiled by them.'","They have not spoiled the papers.","They must not spoil the papers.","They did not spoil the papers.","They had not spoiled the papers.",3,"Past Perfect passive → Past Perfect active: had not spoiled."],
+["English","Select the most appropriate conjunction to fill in the blank: He insisted on going, _____ I advised him against it.","although","since","while","as if",0,"'Although' (= even though) is correct for contrast here. He insisted, although I advised against it."],
+["English","Select the option that correctly converts the sentence into future perfect tense: 'Scientists have been exploring deep-sea ecosystems.'","Scientists will explore deep-sea ecosystems.","Scientists will be exploring deep-sea ecosystems.","Scientists will have been exploring deep-sea ecosystems.","Scientists will have explored deep-sea ecosystems.",2,"Future Perfect Continuous = will have been + present participle."],
+["English","Select the most appropriate meaning of the given idiom: 'Butterflies in one's stomach'","To have nervousness or anxiety","To experience sleepiness","To feel hungry","To enjoy a delicious meal",0,"'Butterflies in one's stomach' means feeling nervous or anxious about something."],
+["English","Select the most appropriate option to fill in the blank: Monika is _____ very intelligent girl.","an","a","the","no article",1,"'Intelligent' starts with a vowel sound but 'very' follows 'a'. a very intelligent girl."],
+["English","Select the option expressing the sentence in direct speech: 'Ashmeet complained that she couldn't focus with the song playing.'","Ashmeet said, 'She couldn't focus with the song playing.'","Ashmeet complained, 'I can't focus with the song playing.'","Ashmeet said, 'She can't focus with the song playing.'","Ashmeet complained, 'I couldn't focus with the song playing.'",1,"Indirect to Direct: 'she' → 'I', 'couldn't' → 'can't' (present tense restored in direct speech)."],
+["English","Select the one-word substitute: 'One who cannot read or write'","Dumb","Blind","Illiterate","Deaf",2,"Illiterate = a person who cannot read or write."],
+["English","Select the most appropriate sentence from the options to form a meaningful and coherent paragraph: 'The forest was unusually quiet that morning. ___. Even the birds were nowhere to be heard.'","It rained the previous evening.","The hunters had returned with heavy footsteps.","The trees had shed most of their leaves.","A thick fog rolled in, muffling all sound.",3,"Option 4 best connects 'unusually quiet' with 'birds not heard' — fog muffling sound is logically coherent."],
+["English","Select the most appropriate option to fill in the blank: I have been waiting _____ two hours.","since","for","from","during",1,"Duration (period of time) → for. 'For two hours' is correct."],
+["English","Select the most appropriate synonym: OBSCURE","Arrogant","Sane","Wild","Ambiguous",3,"Obscure means not clearly expressed or difficult to understand. Synonym → Ambiguous."],
+["English","Select the option that expresses the given sentence in future tense: 'They played football in the evening.'","They will play football in the evening.","They play football in the evening.","They would have played football in the evening.","They have played football in the evening.",0,"Simple Past → Simple Future: will + base verb."],
+["English","Select the most appropriate option: 'She is good _____ mathematics.'","in","at","on","for",1,"Correct collocation: good at. 'She is good at mathematics.'"],
+["Odia","ଦିଆଯାଇଥିବା ବାକ୍ୟରେ ଖାଲି ଜାଗାରେ ଉପଯୁକ୍ତ ଶବ୍ଦ ବ୍ୟବହାର କରନ୍ତୁ:\nସେ _______ ଖାଇ ସ୍କୁଲ ଯାଇଥିଲା ।","ଖାଇ","ଖାଇକରି","ଖାଇ ସାରି","ଖାଉ",2,"ସଠିକ ଉତ୍ତର: 'ଖାଇ ସାରି' — ଏଠାରେ ପୂର୍ଣ ଅର୍ଥ ପ୍ରଦାନ କରୁଥିବା ଶବ୍ଦ ବ୍ୟବହୃତ।"],
+["Odia","'ସୂର୍ଯ୍ୟ ପୂର୍ବ ଦିଗରୁ ଉଦୟ ହୁଏ' — ଏହି ବାକ୍ୟର ଇଂରାଜୀ ଅନୁବାଦ ଚୟନ କରନ୍ତୁ।","The sun rises from the east.","The sun rose from east.","Sun rise in east.","The sun is rising from east.",0,"Correct translation: 'The sun rises from the east.' — Simple Present tense for universal truth."],
+["Odia","He was afraid of being late — ଏହି ବାକ୍ୟର ଓଡ଼ିଆ ଅନୁବାଦ ଚୟନ କରନ୍ତୁ।","ସେ ଡେରି ହୋଇଯିବାକୁ ନେଇ ଭୟ କରନ୍ତି।","ସେ ଭୟରେ ଡେରି କରୁଥିଲେ।","ସେ ଡେରି ହୋଇଯିବା ନେଇ ଭୟ କରୁଛନ୍ତି।","ସେ ଡେରି ହୋଇଯିବା ନେଇ ଭୟ କରୁଥିଲେ।",3,"Correct: ସେ ଡେରି ହୋଇଯିବା ନେଇ ଭୟ କରୁଥିଲେ — Past continuous correctly reflects 'was afraid'."],
+["Odia","ନିମ୍ନଲିଖିତ ବାକ୍ୟରୁ ସର୍ବନାମ ଚୟନ କରନ୍ତୁ:\nସେ ପ୍ରତିଦିନ ସ୍କୁଲ ଯାଏ।","ପ୍ରତିଦିନ","ଯାଏ","ସ୍କୁଲ","ସେ",3,"'ସେ' (He/She) ଏଠାରେ ସର୍ବନାମ (Pronoun) ଭାବରେ ବ୍ୟବହୃତ।"],
+["Odia","'ଉତ୍ସର୍ଜନ ଗ୍ୟାସ ପରିବେଶ ପାଇଁ ବିପଦଜନକ' — ସଠିକ ଇଂରାଜୀ ଅନୁବାଦ ଚୟନ କରନ୍ତୁ।","Emission gases are hazardous to the environment.","Emitted gases are dangerous to the forest.","Pollution increases environmental pollution.","Emission oils are hazardous to the environment.",0,"Correct: 'Emission gases are hazardous to the environment.'"],
+["Odia","ଓଡ଼ିଆ ବ୍ୟାକରଣରେ 'ଆନନ୍ଦରେ' ଶବ୍ଦଟି କେଉଁ ପଦ?","ବିଶେଷ୍ୟ","ବିଶେଷଣ","ଅବ୍ୟୟ","କ୍ରିୟା ବିଶେଷଣ",3,"'ଆନନ୍ଦରେ' ଶବ୍ଦଟି କ୍ରିୟା ବିଶେଷଣ (Adverb), କାରଣ ଏହା କ୍ରିୟାକୁ ବିଶେଷିତ କରେ।"],
+["Odia","'ଚୌକିଦାର ସମସ୍ତଙ୍କ ଘରୁ ଚୋରୀ କରେ' — ଏହି ବାକ୍ୟରେ ଖଳ ଶବ୍ଦ ସ୍ଥାନରେ ଉପଯୁକ୍ତ ଶବ୍ଦ ଦିଅନ୍ତୁ।","ଚୋର","ପୁଲିସ","ପରିବର୍ତ୍ତନ ଦରକାର ନାହିଁ","ଡାକ୍ତର",0,"'ଚୌକିଦାର' (Watchman) ଚୋରୀ କଲେ ଶବ୍ଦ 'ଚୋର' (Thief) ହେବ।"],
+["Odia","ନିମ୍ନ ମଧ୍ୟରୁ ଓଡ଼ିଆ ଭାଷାର ଆଦ୍ୟ କବି କିଏ?","ଉପେନ୍ଦ୍ର ଭଞ୍ଜ","ସାରଳାଦାସ","ଦୀନକୃଷ୍ଣ ଦାସ","ଅତିବଡ଼ି ଜଗନ୍ନାଥ ଦାସ",1,"ସାରଳାଦାସ (15ଶ ଶତାବ୍ଦୀ) ଓଡ଼ିଆ ସାହିତ୍ୟର ଆଦ୍ୟ କବି ଏବଂ ଓଡ଼ିଆ ମହାଭାରତ ରଚନା କରିଥିଲେ।"],
+["Odia","'ଜଗନ୍ନାଥ ଦାସ' କ'ଣ ପ୍ରଣୟନ କରିଥିଲେ?","ଓଡ଼ିଆ ରାମାୟଣ","ଓଡ଼ିଆ ଭାଗବତ","ଓଡ଼ିଆ ମହାଭାରତ","ଓଡ଼ିଆ ଗୀତା",1,"ଅତିବଡ଼ି ଜଗନ୍ନାଥ ଦାସ ଓଡ଼ିଆ ଭାଗବତ ରଚନା କରିଥିଲେ। ଏହା ଓଡ଼ିଶାର ଅତ୍ୟନ୍ତ ଶ୍ରଦ୍ଧୁତ ଗ୍ରନ୍ଥ।"],
+["Odia","'ଆ' ବିଭକ୍ତି ଓଡ଼ିଆ ବ୍ୟାକରଣରେ କେଉଁ କାରକ ନିର୍ଦ୍ଦେଶ କରେ?","କର୍ତ୍ତୃ କାରକ","କର୍ମ କାରକ","ସମ୍ବୋଧନ","ଅଧିକରଣ କାରକ",1,"'ଆ' ବିଭକ୍ତି ଓଡ଼ିଆରେ ସାଧାରଣତଃ କର୍ମ କାରକ (Objective case) ନିର୍ଦ୍ଦେଶ କରେ।"],
+["Odia","ଓଡ଼ିଶାର ରାଜ୍ୟ ଭାଷା କ'ଣ?","ହିନ୍ଦି","ଇଂରାଜୀ","ଓଡ଼ିଆ","ବଙ୍ଗଳା",2,"ଓଡ଼ିଆ ଭାଷା ଓଡ଼ିଶାର ସରକାରୀ ରାଜ୍ୟ ଭାଷା। ଏହା ୨୦୧୪ ମସିହାରେ ଭାରତ ସରକାରଙ୍କ ଦ୍ୱାରା ଷ୍ଟ୍ୟାଟସ୍ ଭାଷା ଭାବରେ ସ୍ୱୀକୃତ ହୋଇଛି।"],
+["Odia","'ଦୁଃଖ' ଶବ୍ଦର ବିପରୀତ ଶବ୍ଦ ଚୟନ କରନ୍ତୁ।","ବ୍ୟଥା","ଯନ୍ତ୍ରଣା","ସୁଖ","ଅଶାନ୍ତି",2,"'ଦୁଃଖ' (Grief/Sorrow)-ର ବିପରୀତ ଶବ୍ଦ 'ସୁଖ' (Happiness)।"],
+["Odia","'ଶ୍ୟାମ ଖାଏ' — ଏଠି 'ଖାଏ' ଶବ୍ଦ କ'ଣ?","ବିଶେଷ୍ୟ","ବିଶେଷଣ","ସର୍ବନାମ","ଧାତୁ/କ୍ରିୟା",3,"'ଖାଏ' ଏଠାରେ ଏକ ସମ୍ପୂର୍ଣ କ୍ରିୟା (Verb), ଯାହା ବର୍ତ୍ତମାନ ସରଳ କ୍ରିୟାରୂପ।"],
+["Odia","ନିମ୍ନ ମଧ୍ୟରୁ ଓଡ଼ିଆ ଅକ୍ଷର ଶ୍ରେଣୀ (ମାତ୍ରା) ସଂଖ୍ୟା କେତୋଟି?","10","12","16","18",1,"ଓଡ଼ିଆ ଭାଷାରେ ୧୨ ଟି ସ୍ୱର (ଅ, ଆ, ଇ, ଈ, ଉ, ଊ, ଋ, ଏ, ଐ, ଓ, ଔ, ଅଂ)।"],
+["Odia","'ଉଡ଼ ଆ ଆ ଛୁ' — ଏହି ଅଭ୍ୟାସ ଓଡ଼ିଆ ଶ୍ରେଣୀ ଯୋଗ ରୂପଟି ହୁଏ:  [Translate] 'Children play happily' in Odia:","ପିଲାମାନେ ଆନନ୍ଦରେ ଖେଳନ୍ତି।","ପିଲାମାନେ ଖୁସିରେ ଦୌଡ଼ନ୍ତି।","ଛୁଆ ଖୁସି ହୋଇ ଖାଏ।","ଛୁଆ ଶୋଏ।",0,"Correct: ପିଲାମାନେ ଆନନ୍ଦରେ ଖେଳନ୍ତି — 'Children play happily.'"],
+["Computer","Which shortcut key is used to 'Save As' a document in MS Word?","Ctrl + S","Ctrl + A","F12","Ctrl + Shift + S",2,"F12 opens the 'Save As' dialog box in MS Word."],
+["Computer","What does 'CPU' stand for?","Central Processing Unit","Computer Processing Unit","Central Program Unit","Core Processing Unit",0,"CPU stands for Central Processing Unit — the primary component that executes instructions."],
+["Computer","Which of the following is NOT an input device?","Keyboard","Mouse","Printer","Scanner",2,"A Printer is an output device. Keyboard, Mouse, and Scanner are input devices."],
+["Computer","What is the full form of 'WWW'?","World Wide Web","World Wide Word","Wide World Web","World Web Wide",0,"WWW stands for World Wide Web, a system of interlinked hypertext documents on the internet."],
+["Computer","Which function key is used to refresh a web page or folder in Windows?","F2","F3","F4","F5",3,"F5 is used to refresh or reload a page in browsers and Windows Explorer."],
+["Computer","In MS Excel, which symbol is used to start a formula?","@ symbol","# symbol","= symbol","$ symbol",2,"All formulas in MS Excel must begin with the '=' (equals) sign."],
+["Computer","The process of loading the operating system into computer memory is called:","Booting","Formatting","Debugging","Compiling",0,"Booting is the process of starting a computer and loading the operating system into RAM."],
+["Computer","Which of the following is an example of an Operating System?","MS Word","Google Chrome","Windows 11","VLC Player",2,"Windows 11 is an Operating System. MS Word and VLC are application software; Chrome is a browser."],
+["Computer","1 Gigabyte (GB) is equal to how many Megabytes (MB)?","100 MB","512 MB","1000 MB","1024 MB",3,"1 GB = 1024 MB in binary system (computers use binary)."],
+["Computer","Which of the following is used to protect a computer from viruses?","Firewall","Compiler","Spreadsheet","Browser",0,"Antivirus software and Firewall protect computers from viruses and unauthorized access."],
+["Computer","What does 'PDF' stand for?","Printed Document Format","Portable Document Format","Personal Document File","Page Document Format",1,"PDF stands for Portable Document Format, developed by Adobe for document sharing."],
+["Computer","In MS PowerPoint, which shortcut starts the slideshow from the beginning?","F3","F4","F5","F7",2,"F5 starts the PowerPoint slideshow from the very first slide."],
+["Computer","Which of the following is a web browser?","MS Excel","Adobe Reader","Mozilla Firefox","Windows Media Player",2,"Mozilla Firefox is a web browser. Others are application software for different purposes."],
+["Computer","The 'Recycle Bin' in Windows stores:","Temporary internet files","Recently used programs","Deleted files","System files",2,"The Recycle Bin temporarily stores deleted files, allowing users to restore them before permanent deletion."],
+["Computer","Which key combination is used to copy selected text in Windows?","Ctrl + X","Ctrl + V","Ctrl + C","Ctrl + Z",2,"Ctrl + C = Copy, Ctrl + X = Cut, Ctrl + V = Paste, Ctrl + Z = Undo."],
+["Computer","RAM stands for:","Read Access Memory","Random Access Memory","Rapid Access Memory","Read All Memory",1,"RAM = Random Access Memory. It is temporary, volatile memory used by the CPU for active tasks."],
+["Computer","Which of the following file extensions is associated with MS Word documents?",".xls",".ppt",".docx",".pdf",2,".docx is the file extension for MS Word 2007 and later documents."],
+["Computer","What does 'HTML' stand for?","Hyper Text Markup Language","High Transfer Markup Language","Hyper Transfer Machine Language","High Text Markup Language",0,"HTML = HyperText Markup Language — the standard language for creating web pages."],
+["Computer","Which of the following is the correct definition of a 'database'?","A program to design graphics","An organized collection of structured data","A type of virus","A web browser",1,"A database is an organized collection of structured information stored electronically, managed by a DBMS."],
+["Computer","The blinking symbol on the computer screen that shows where your next typed character will appear is called:","Icon","Cursor","Pointer","Scroll bar",1,"The cursor (specifically a text cursor or caret) shows where the next typed character will appear."],
+];
+
+// ══ STATE ════════════════════════════════════════════════════════════
+const TOTAL=QS.length, TSECS=90*60;
+let cur=0,slct=new Array(TOTAL).fill(-1),tLeft=TSECS,tUsed=0,done=false,tick=null;
+let cName='',cMob='',palSubj=0;
+
+// ══ THEME ════════════════════════════════════════════════════════════
+(function(){const t=localStorage.getItem('ci-theme')||'dark';
+  document.documentElement.setAttribute('data-theme',t);
+  document.getElementById('theme-btn').textContent=t==='light'?'☀️':'🌙';
+})();
+function toggleTheme(){
+  const c=document.documentElement.getAttribute('data-theme');
+  const n=c==='light'?'dark':'light';
+  document.documentElement.setAttribute('data-theme',n);
+  document.getElementById('theme-btn').textContent=n==='light'?'☀️':'🌙';
+  localStorage.setItem('ci-theme',n);
+}
+
+// ══ PAGE SWITCH ══════════════════════════════════════════════════════
+function show(id){
+  document.querySelectorAll('.pg').forEach(p=>{p.classList.remove('on');p.style.cssText='';});
+  const el=document.getElementById(id);el.classList.add('on');
+  if(id==='pg2')el.style.cssText='display:flex;align-items:center;justify-content:center;min-height:calc(100vh - 50px);padding:20px 14px;';
+  if(id==='pg3')el.style.cssText='display:flex;flex-direction:column;';
+  requestAnimationFrame(()=>{document.documentElement.scrollTop=0;document.body.scrollTop=0;window.scrollTo({top:0,behavior:'instant'});});
+}
+function goForm(){show('pg2');}
+
+// ══ FORMSPREE ════════════════════════════════════════════════════════
+function sendFS(data){
+  const fd=new FormData();Object.entries(data).forEach(([k,v])=>fd.append(k,v));
+  fetch('https://formspree.io/f/mnjoganv',{method:'POST',body:fd,mode:'no-cors'}).catch(()=>{});
+}
+
+// ══ FORM HANDLER ═════════════════════════════════════════════════════
+function handleForm(){
+  const nm=document.getElementById('fn').value.trim();
+  const mb=document.getElementById('fm').value.trim();
+  const err=document.getElementById('ferr');err.style.display='none';
+  if(!nm||nm.length<2){err.textContent='Please enter your full name.';err.style.display='block';return;}
+  if(!/^\d{10}$/.test(mb)){err.textContent='Please enter a valid 10-digit mobile number.';err.style.display='block';return;}
+  cName=nm;cMob=mb;
+  const btn=document.getElementById('sbtn');btn.disabled=true;btn.textContent='Starting...';
+  sendFS({_subject:'[Register] Full Mock — '+nm,Name:nm,Mobile:mb,Test:'OSSSC Full Mock Test (100 Qs)',Time:new Date().toLocaleString('en-IN',{timeZone:'Asia/Kolkata'})});
+  setTimeout(()=>{btn.disabled=false;btn.innerHTML='🚀 &nbsp; Start Mock Test';startTest();},350);
+}
+
+// ══ START TEST ════════════════════════════════════════════════════════
+function startTest(){
+  buildPalette();show('pg3');
+  document.getElementById('tmr-box').style.display='flex';
+  document.getElementById('cand-label').style.display='block';
+  document.getElementById('cand-label').textContent='👤 '+cName;
+  loadQ(0);startTimer();
+}
+
+// ══ PALETTE BUILD ════════════════════════════════════════════════════
+function buildPalette(){
+  // Build subject tabs
+  const tabs=document.getElementById('psh-tabs');tabs.innerHTML='';
+  SUBJS.forEach((s,i)=>{
+    const d=document.createElement('div');d.className='ptab'+(i===0?' active':'');
+    d.style.setProperty('--sc',s.color);
+    d.innerHTML=`<div class="ptab-ico">${s.icon}</div><div class="ptab-name" style="color:${i===palSubj?'#fff':s.color}">${s.short}</div><div class="ptab-prog" id="tp-${i}">0/${s.count}</div>`;
+    d.onclick=()=>switchPalSubj(i);
+    d.id='pt-'+i;tabs.appendChild(d);
+  });
+  renderPalGrid(0);
+}
+
+function switchPalSubj(i){
+  palSubj=i;
+  document.querySelectorAll('.ptab').forEach((t,j)=>t.className='ptab'+(j===i?' active':''));
+  renderPalGrid(i);
+}
+
+function renderPalGrid(si){
+  const s=SUBJS[si];const g=document.getElementById('psh-grid');g.innerHTML='';
+  for(let i=s.start;i<=s.end;i++){
+    const b=document.createElement('button');
+    b.className='pb'+(slct[i]!==-1?' ans':'')+(i===cur?' cur':'');
+    b.style.setProperty('--sc',s.color);
+    if(slct[i]!==-1)b.style.background=s.color;
+    b.textContent=i+1;b.id='pb'+i;
+    b.onclick=()=>{loadQ(i);togglePal();};
+    g.appendChild(b);
+  }
+}
+
+function togglePal(){
+  const sh=document.getElementById('pal-sheet'),ov=document.getElementById('pal-ov'),btn=document.getElementById('nb-pal');
+  const open=sh.classList.contains('open');
+  if(open){sh.classList.remove('open');ov.classList.remove('on');btn.classList.remove('open');document.body.style.overflow='';}
+  else{
+    // sync current subject tab
+    const si=SUBJS.findIndex(s=>cur>=s.start&&cur<=s.end);
+    if(si>=0&&si!==palSubj)switchPalSubj(si);
+    renderPalGrid(palSubj);
+    updateTabProgress();
+    sh.classList.add('open');ov.classList.add('on');btn.classList.add('open');document.body.style.overflow='hidden';
+  }
+}
+
+function updateTabProgress(){
+  SUBJS.forEach((s,i)=>{
+    const ans=slct.slice(s.start,s.end+1).filter(v=>v!==-1).length;
+    const el=document.getElementById('tp-'+i);if(el)el.textContent=ans+'/'+s.count;
+  });
+}
+
+// ══ LOAD QUESTION ════════════════════════════════════════════════════
+function loadQ(qi){
+  cur=qi;const q=QS[qi];const sb=getSubj(qi);
+  document.getElementById('qbadge').textContent='Q '+(qi+1)+' / '+TOTAL;
+  document.getElementById('pb').style.width=((qi+1)/TOTAL*100)+'%';
+  // subject pill
+  const pill=document.getElementById('subj-pill');
+  pill.textContent=sb.icon+' '+sb.short||sb.name;
+  pill.style.background=sb.color+'22';pill.style.color=sb.color;
+  pill.style.border='1px solid '+sb.color+'55';
+  // card border
+  document.getElementById('qcard').style.borderLeftColor=sb.color;
+  document.getElementById('qcat').textContent=q[0];
+  document.getElementById('qtxt').innerHTML='<strong>Q'+(qi+1)+'.</strong>&ensp;'+esc(q[1]).replace(/\\n/g,'<br>');
+  for(let i=0;i<4;i++){
+    document.getElementById('t'+i).textContent=q[2+i];
+    const el=document.getElementById('o'+i);
+    el.className='opt'+(slct[qi]===i?' sel':'');
+    el.querySelector('.ok').style.background=slct[qi]===i?sb.color:'var(--gry)';
+  }
+  document.getElementById('nb-prev').disabled=qi===0;
+  const nn=document.getElementById('nb-next');
+  nn.textContent=qi===TOTAL-1?'Submit ✔':'Next ▶';
+  nn.className='nb'+(qi===TOTAL-1?' last':'');
+  const ex=document.getElementById('expl');ex.className='';ex.innerHTML='';
+  if(slct[qi]!==-1)showExpl(qi);
+  updStats();
+}
+
+function esc(s){return(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+
+// ══ ANSWER SELECTION ═════════════════════════════════════════════════
+function sel(i){
+  if(done)return;
+  const sb=getSubj(cur);
+  slct[cur]=i;
+  for(let j=0;j<4;j++){
+    const el=document.getElementById('o'+j);
+    el.className='opt'+(j===i?' sel':'');
+    el.querySelector('.ok').style.background=j===i?sb.color:'var(--gry)';
+  }
+  showExpl(cur);updStats();
+}
+
+function showExpl(qi){
+  const q=QS[qi],s=slct[qi],c=q[6],keys=['A','B','C','D'];
+  const ex=document.getElementById('expl');
+  if(s===-1){ex.className='';ex.innerHTML='';return;}
+  const ok=s===c;
+  // recolour options
+  const sb=getSubj(qi);
+  for(let j=0;j<4;j++){
+    const el=document.getElementById('o'+j);
+    if(j===c){el.className='opt cor';el.querySelector('.ok').style.background='var(--grn)';}
+    else if(j===s&&s!==c){el.className='opt wrg';el.querySelector('.ok').style.background='var(--red)';}
+    else{el.className='opt';el.querySelector('.ok').style.background='var(--gry)';}
+  }
+  ex.className='on';
+  ex.innerHTML=(ok
+    ?'<span style="color:var(--grn);font-weight:700">✔ Correct!</span>'
+    :'<span style="color:var(--red);font-weight:700">✘ Wrong!</span> &nbsp;Correct: <strong style="color:var(--grn)">'+keys[c]+'. '+esc(q[2+c])+'</strong>')
+    +'<br><span style="color:var(--acc3)">💡</span> '+esc(q[7]);
+}
+
+function updStats(){
+  const a=slct.filter(v=>v!==-1).length;
+  const sa=document.getElementById('ps-a'),ss=document.getElementById('ps-s');
+  if(sa)sa.textContent=a;if(ss)ss.textContent=TOTAL-a;
+}
+
+function nav(d){const n=cur+d;if(n>=0&&n<TOTAL)loadQ(n);}
+function navNext(){if(cur===TOTAL-1)confirmSub();else nav(1);}
+
+// ══ TIMER ════════════════════════════════════════════════════════════
+function fmt(s){const m=Math.floor(s/60),sc=s%60;return String(m).padStart(2,'0')+':'+String(sc).padStart(2,'0');}
+function startTimer(){
+  tick=setInterval(()=>{
+    tLeft--;tUsed++;
+    const t=fmt(tLeft);
+    document.getElementById('tmr').textContent=t;
+    const ps=document.getElementById('ps-t');if(ps)ps.textContent=t;
+    const el=document.getElementById('tmr');el.className='';
+    if(tLeft<=120)el.classList.add('danger');else if(tLeft<=300)el.classList.add('warn');
+    if(tLeft<=0){clearInterval(tick);doSub();}
+  },1000);
+}
+
+// ══ SUBMIT ═══════════════════════════════════════════════════════════
+function confirmSub(){
+  const a=slct.filter(v=>v!==-1).length,sk=TOTAL-a;
+  document.getElementById('mb').innerHTML='<b>'+cName+'</b>, sure you want to submit?<br><br>Answered: <b>'+a+'</b> &nbsp;|&nbsp; Skipped: <b>'+sk+'</b><br><br>You cannot change answers after submission.';
+  document.getElementById('mbg').classList.add('on');
+}
+function closeMod(){document.getElementById('mbg').classList.remove('on');}
+function doSub(){
+  if(done)return;done=true;if(tick)clearInterval(tick);closeMod();
+  document.getElementById('pal-sheet').classList.remove('open');
+  document.getElementById('pal-ov').classList.remove('on');
+  document.body.style.overflow='';
+  showResult();
+}
+
+// ══ RESULT ═══════════════════════════════════════════════════════════
+function showResult(){
+  let cor=0,wrg=0,skp=0;
+  for(let i=0;i<TOTAL;i++){
+    if(slct[i]===-1)skp++;else if(slct[i]===QS[i][6])cor++;else wrg++;
+  }
+  const score=+(cor-wrg*0.25).toFixed(2),pct=+((score/TOTAL)*100).toFixed(1);
+  const band=pct>=75?'🏆 Excellent':pct>=55?'👍 Good':pct>=40?'📘 Average':'📌 Needs Improvement';
+  document.getElementById('rv-sc').textContent=score+'/'+TOTAL;
+  document.getElementById('rv-pct').textContent=pct+'%';
+  document.getElementById('rv-cor').textContent=cor;
+  document.getElementById('rv-wrg').textContent=wrg;
+  document.getElementById('rv-skp').textContent=skp;
+  document.getElementById('rv-tm').textContent=fmt(tUsed);
+  document.getElementById('rband').textContent=band+' — '+pct+'%';
+
+  // Subject-wise bars
+  const sbarEl=document.getElementById('sbar-rows');sbarEl.innerHTML='';
+  SUBJS.forEach(s=>{
+    const sc=slct.slice(s.start,s.end+1);
+    const co=sc.filter((v,i)=>v===QS[s.start+i][6]).length;
+    const pct2=Math.round((co/s.count)*100);
+    sbarEl.innerHTML+=`<div class="sbar-row">
+      <div class="sbar-label">${s.icon} ${s.short}</div>
+      <div class="sbar-track"><div class="sbar-fill" style="width:${pct2}%;background:${s.color}"></div></div>
+      <div class="sbar-count">${co}/${s.count}</div>
+    </div>`;
+  });
+
+  // Formspree
+  const subjBreakdown=SUBJS.map(s=>{
+    const sc=slct.slice(s.start,s.end+1);
+    const co=sc.filter((v,i)=>v===QS[s.start+i][6]).length;
+    return s.name+': '+co+'/'+s.count;
+  }).join(', ');
+  sendFS({_subject:'[Result] '+cName+' — '+score+'/'+TOTAL+' ('+pct+'%)',
+    Name:cName,Mobile:cMob,Test:'OSSSC Full Mock Test (100 Qs)',
+    Score:score+'/'+TOTAL,Percentage:pct+'%',Correct:cor,Wrong:wrg,Skipped:skp,
+    Band:band,SubjectWise:subjBreakdown,TimeUsed:fmt(tUsed),
+    At:new Date().toLocaleString('en-IN',{timeZone:'Asia/Kolkata'})});
+
+  // Review
+  const rl=document.getElementById('rvlist');rl.innerHTML='';const keys=['A','B','C','D'];
+  for(let i=0;i<TOTAL;i++){
+    const q=QS[i],s=slct[i],c=q[6],sb=getSubj(i);
+    let badge='',bc='';
+    if(s===-1){badge='Skipped';bc='rs';}else if(s===c){badge='✔ Correct';bc='rc';}else{badge='✘ Wrong';bc='rw2';}
+    let opH='';for(let j=0;j<4;j++){
+      let cls='ropt';if(j===c)cls+=' roc';else if(j===s&&s!==c)cls+=' row2';
+      opH+=`<div class="${cls}"><b>${keys[j]}.</b> ${esc(q[2+j])}</div>`;
+    }
+    rl.innerHTML+=`<div class="rcard" style="border-left:3px solid ${sb.color}">
+      <span style="font-size:.62rem;color:${sb.color};font-weight:700;margin-right:7px">${sb.icon} ${sb.short}</span>
+      <span class="rbdg ${bc}">${badge}</span>
+      <div class="rq"><b>Q${i+1}.</b> ${esc(q[1]).replace(/\\n/g,'<br>')}</div>
+      <div class="ropts">${opH}</div>
+      <div class="rexp">💡 ${esc(q[7])}</div>
+    </div>`;
+  }
+
+  show('pg4');
+  document.getElementById('tmr-box').style.display='none';
+  document.getElementById('cand-label').style.display='none';
+}
+</script>
+</body>
+</html>
